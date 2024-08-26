@@ -12,6 +12,9 @@
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
 
+# Lib +100MB
+/Library/PackageCache/com.unity.burst@1.8.17
+
 # Editor client UI configuration files
 /[Uu]ser[Ss]ettings/
 
