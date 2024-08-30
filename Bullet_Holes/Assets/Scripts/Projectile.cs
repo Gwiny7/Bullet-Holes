@@ -19,7 +19,7 @@ namespace BulletHoles
 
         void Start(){
             if(muzzlePrefab != null){
-                //instantiate  muzzle flash
+                //instantiate muzzle flash
                 GameObject muzzleVFX = Instantiate(muzzlePrefab, transform.position, Quaternion.identity);
                 muzzleVFX.transform.forward = gameObject.transform.forward;
                 muzzleVFX.transform.SetParent(parent);
@@ -30,7 +30,7 @@ namespace BulletHoles
 
         void Update(){
             transform.SetParent(null);
-            transform.position += transform.forward * (speed * Time.deltaTime);
+            transform.position += transform.up * (speed * Time.deltaTime);
         }
 
         void OnCollisionEnter(Collision collision){

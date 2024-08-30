@@ -42,13 +42,13 @@ namespace BulletHoles
             transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref currentVelocity, smoothness);
 
             //Calculate the rotation effect
-            float targetRotationAngle = -input.Move.x * leanAngle;
+            /*float targetRotationAngle = -input.Move.x * leanAngle;
 
             float currentYRotation = transform.localEulerAngles.y;
             float newYRotation = Mathf.LerpAngle(currentYRotation, targetRotationAngle, leanSpeed * Time.deltaTime);
 
             //Apply rotation effect
-            transform.localEulerAngles = new Vector3(0f, newYRotation, 0f);
+            transform.localEulerAngles = new Vector3(0f, newYRotation, 0f);*/
         }
     }
 }
