@@ -39,6 +39,9 @@ namespace BulletHoles
             splineAnimate.AnimationMethod = SplineAnimate.Method.Speed;
             splineAnimate.ObjectUpAxis = SplineAnimate.AlignAxis.ZAxis;
             splineAnimate.ObjectForwardAxis = SplineAnimate.AlignAxis.YAxis;
+            splineAnimate.MaxSpeed = speed;
+
+            instance.transform.position = (Vector3)spline.EvaluatePosition(0f);
 
             return instance;
         }
