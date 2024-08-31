@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace BulletHoles
@@ -17,6 +18,8 @@ namespace BulletHoles
             this.parent = parent;
         }
 
+        public Action Callback;
+
         void Start(){
             if(muzzlePrefab != null){
                 //instantiate muzzle flash
@@ -31,6 +34,8 @@ namespace BulletHoles
         void Update(){
             transform.SetParent(null);
             transform.position += transform.up * (speed * Time.deltaTime);
+
+            Callback?.Invoke();
         }
 
         void OnCollisionEnter(Collision collision){
