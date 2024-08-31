@@ -10,7 +10,7 @@ namespace BulletHoles
             projectile.transform.SetParent(firePoint);
             projectile.layer = layer;
 
-            var projectileComponent = projectile.GetComponent<Projectile>();
+            Projectile projectileComponent = projectile.GetComponent<Projectile>();
             projectileComponent.SetSpeed(projectileSpeed);
 
             Destroy(projectile, projectileLifetime);

@@ -1254,7 +1254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTypes:
   - {fileID: 11400000, guid: 17befcb4c69fa044d8294da65d922a98, type: 2}
-  maxEnemies: 1
+  maxEnemies: 10
   spawnInterval: 2
 --- !u!1 &1485452070
 GameObject:
@@ -2437,7 +2437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2081151b83a4d6344a9a385b8661e055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponStrategy: {fileID: 11400000, guid: a3daf95bcdb174849bbcc0b57416e931, type: 2}
+  weaponStrategy: {fileID: 11400000, guid: b1b9dce962740c94384d6e2c0b041e31, type: 2}
   firePoint: {fileID: 669486663}
   layer: 6
 --- !u!135 &1980755651
