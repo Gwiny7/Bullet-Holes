@@ -5,10 +5,6 @@ using System.Collections.Generic;
 
 public class MenuController : MonoBehaviour
 {
-
-    public GameObject mainMenuPanel;
-    public GameObject optionsPanel;
-    public GameObject creditsPanel;
     public Slider volumeSlider;
     public Dropdown resolutionDropdown;
     private List<Resolution> resolutions = new List<Resolution>();
@@ -18,17 +14,6 @@ public class MenuController : MonoBehaviour
         volumeSlider.onValueChanged.AddListener(SetVolume);
 
         PopulateResolutionDropdown();
-    }
-
-    public void PlayGame()
-    {
-        SceneManager.LoadScene("Level1");
-    }
-
-    public void OpenOptions()
-    {
-        mainMenuPanel.SetActive(false);
-        optionsPanel.SetActive(true);
     }
 
     public void SetVolume(float volume) //Volume
@@ -65,29 +50,5 @@ public class MenuController : MonoBehaviour
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-    }
-
-    public void CloseOptions()
-    {
-        optionsPanel.SetActive(false);
-        mainMenuPanel.SetActive(true);
-    }
-
-    public void OpenCredits()
-    {
-        mainMenuPanel.SetActive(false);
-        creditsPanel.SetActive(true);
-    }
-
-    public void CloseCredits()
-    {
-        creditsPanel.SetActive(false);
-        mainMenuPanel.SetActive(true);
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
-    
+    }    
 }
