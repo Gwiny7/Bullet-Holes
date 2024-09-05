@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using Utilities;
 
 namespace BulletHoles
 {
@@ -11,7 +12,7 @@ namespace BulletHoles
 
         void Awake(){
             playButton.onClick.AddListener(()=> Loader.Load(startingLevel));
-            quitButton.onClick.AddListener(()=> Application.Quit());
+            quitButton.onClick.AddListener(()=> Helpers.QuitGame());
             Time.timeScale = 1f;
         }
     }

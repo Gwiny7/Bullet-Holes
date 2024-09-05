@@ -46,6 +46,11 @@ namespace BulletHoles
                 DestroyParticleSystem(hitVFX);
             }
 
+            Plane plane = collision.gameObject.GetComponent<Plane>();
+            if(plane != null){
+                plane.TakeDamage(10);
+            }
+
             Destroy(gameObject);
         }
 
