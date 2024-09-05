@@ -18,7 +18,14 @@ namespace BulletHoles
             }
         }
 
-        public float GetHealthNormalized() => 1 - (health / maxHealth);
+        public void AddHealth(int amount){
+            health += amount;
+            if(health > maxHealth){
+                health = maxHealth;
+            }
+        }
+
+        public float GetHealthNormalized() => health /(float) maxHealth;
         protected abstract void Die();
     }
 }
