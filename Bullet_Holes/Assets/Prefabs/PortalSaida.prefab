@@ -9,11 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5954861498514149492}
-  - component: {fileID: 6973933732041866772}
-  - component: {fileID: 2727245587331474267}
-  - component: {fileID: 9033161535447281923}
-  m_Layer: 9
-  m_Name: PortalEntrada
+  - component: {fileID: 170417406812302161}
+  m_Layer: 6
+  m_Name: PortalSaida
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,7 +34,7 @@ Transform:
   - {fileID: 3432879031386301117}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6973933732041866772
+--- !u!114 &170417406812302161
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,59 +43,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4078351203785924730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d33a49876ea71d40a527b9096b5b918, type: 3}
+  m_Script: {fileID: 11500000, guid: 3cd5f535ec43a2549984b1b0295aef5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponStrategy: {fileID: 11400000, guid: a3daf95bcdb174849bbcc0b57416e931, type: 2}
   firePoint: {fileID: 3432879031386301117}
-  portalSaida: {fileID: 0}
---- !u!65 &2727245587331474267
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4078351203785924730}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.04, y: 0.24, z: 1}
-  m_Center: {x: -0.04, y: 0, z: 0}
---- !u!54 &9033161535447281923
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4078351203785924730}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
+  layer: 6
 --- !u!1 &7130989132738239798
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +154,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 95
   m_Sprite: {fileID: 21300000, guid: 37a849f91296d184b9517e9c300ab80d, type: 3}
-  m_Color: {r: 0, g: 0.7051766, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.6513464, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

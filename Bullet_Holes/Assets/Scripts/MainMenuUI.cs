@@ -12,7 +12,7 @@ namespace BulletHoles
 
         void Awake(){
             playButton.onClick.AddListener(()=> Loader.Load(startingLevel));
-            quitButton.onClick.AddListener(()=> Helpers.QuitGame());
+            quitButton.onClick.AddListener(()=> Application.Quit());
             Time.timeScale = 1f;
         }
     }
