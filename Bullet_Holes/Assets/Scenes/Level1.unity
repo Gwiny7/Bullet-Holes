@@ -575,37 +575,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 536680519}
   m_CullTransparentMesh: 1
---- !u!1 &572560061
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 572560062}
-  m_Layer: 6
-  m_Name: PortalSaida
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &572560062
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 572560061}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1980755644}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &595595749
 GameObject:
   m_ObjectHideFlags: 0
@@ -1821,7 +1790,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 5eaede54a08c2b7479b4f6710e3d7eaa, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.31132078, g: 0.019090435, b: 0.039943606, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
@@ -2445,37 +2414,6 @@ MonoBehaviour:
   - {fileID: 1778566336}
   - {fileID: 1385503527}
   IsBossInvulnerable: 1
---- !u!1 &1115848423
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1115848424}
-  m_Layer: 6
-  m_Name: PortalEntrada
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1115848424
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1115848423}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1980755644}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1128916158
 GameObject:
   m_ObjectHideFlags: 0
@@ -2524,7 +2462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTypes:
   - {fileID: 11400000, guid: 17befcb4c69fa044d8294da65d922a98, type: 2}
-  maxEnemies: 0
+  maxEnemies: 10
   spawnInterval: 2
 --- !u!1 &1135850974
 GameObject:
@@ -2593,6 +2531,18 @@ PrefabInstance:
       value: PortalEntrada
       objectReference: {fileID: 0}
     - target: {fileID: 5954861498514149492, guid: b74eb725330597c48bbbc736bb244273, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954861498514149492, guid: b74eb725330597c48bbbc736bb244273, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954861498514149492, guid: b74eb725330597c48bbbc736bb244273, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954861498514149492, guid: b74eb725330597c48bbbc736bb244273, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -2631,6 +2581,10 @@ PrefabInstance:
     - target: {fileID: 5954861498514149492, guid: b74eb725330597c48bbbc736bb244273, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954861498514149492, guid: b74eb725330597c48bbbc736bb244273, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6973933732041866772, guid: b74eb725330597c48bbbc736bb244273, type: 3}
       propertyPath: portalSaida
@@ -3316,8 +3270,8 @@ Transform:
   m_GameObject: {fileID: 1731633985}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.04, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1980755644}
@@ -3330,7 +3284,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731633985}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3239e355e5894f340a7e7bb5813dfc28, type: 2}
   m_CullingMode: 0
@@ -4547,8 +4501,6 @@ Transform:
   - {fileID: 1731633986}
   - {fileID: 667042990}
   - {fileID: 669486663}
-  - {fileID: 1115848424}
-  - {fileID: 572560062}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1980755645
@@ -4831,6 +4783,18 @@ PrefabInstance:
       value: PortalSaida
       objectReference: {fileID: 0}
     - target: {fileID: 5954861498514149492, guid: acf556d47be9fa44695883c875fb5670, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954861498514149492, guid: acf556d47be9fa44695883c875fb5670, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954861498514149492, guid: acf556d47be9fa44695883c875fb5670, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954861498514149492, guid: acf556d47be9fa44695883c875fb5670, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.7
       objectReference: {fileID: 0}
@@ -4869,6 +4833,10 @@ PrefabInstance:
     - target: {fileID: 5954861498514149492, guid: acf556d47be9fa44695883c875fb5670, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954861498514149492, guid: acf556d47be9fa44695883c875fb5670, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
