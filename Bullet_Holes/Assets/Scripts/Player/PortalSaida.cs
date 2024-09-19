@@ -16,8 +16,8 @@ namespace BulletHoles
             weaponStrategy.Fire(firePoint, layer);
         }
 
-        public void PlacePortal(Transform coords){
-            transform.position = coords.position;
+        public void PlacePortal(Vector3 coords){
+            transform.position = coords;
         }   
     }
 }

@@ -4,8 +4,9 @@ namespace BulletHoles
 {
     public class PlayerWeapon : MonoBehaviour {
         InputReader input;
-        [SerializeField] Transform spawnPoint;
+        Vector3 spawnPoint;
         [SerializeField] PortalSaida portalSaida;
+        [SerializeField] PortalEntrada portalEntrada;
 
 
         void Awake(){
@@ -14,8 +15,15 @@ namespace BulletHoles
         
         //Regular Fire code
         void Update(){
+            spawnPoint = Input.mousePosition;
+            spawnPoint = Camera.main.ScreenToWorldPoint(spawnPoint);
+            spawnPoint = new Vector3(spawnPoint.x, spawnPoint.y, 0);
+
             if(input.Fire){
                 portalSaida.PlacePortal(spawnPoint);
+            }
+            if(input.Fire2){
+                portalEntrada.PlacePortal(spawnPoint);
             }
         }
     }

@@ -11,15 +11,12 @@ namespace BulletHoles
         Vector3 pos;
         [SerializeField] PortalSaida portalSaida;
 
-        void Update(){
-            pos = Input.mousePosition;
-            transform.position = Camera.main.ScreenToWorldPoint(pos);
-            transform.position = new Vector3(transform.position.x, transform.position.y, 0);
-        }
-
         void OnCollisionEnter(Collision collision){
             portalSaida.Fire();
         }
 
+        public void PlacePortal(Vector3 coords){
+            transform.position = coords;
+        }
     }
 }
