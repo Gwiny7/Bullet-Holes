@@ -14,7 +14,7 @@ namespace BulletHoles
         public void TakeDamage(int amount){
             health -= amount;
             if(health <= 0){
-                Die();
+                Die(maxHealth);
             }
         }
 
@@ -26,6 +26,6 @@ namespace BulletHoles
         }
 
         public float GetHealthNormalized() => health /(float) maxHealth;
-        protected abstract void Die();
+        protected abstract void Die(int health);
     }
 }

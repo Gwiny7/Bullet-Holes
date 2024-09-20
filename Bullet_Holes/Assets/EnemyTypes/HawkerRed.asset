@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 4776729666306105334, guid: 28a51765ae7b63c4690382f8fa263d55, type: 3}
   weaponPrefab: {fileID: 0}
-  speed: 2
+  speed: 1

@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 namespace BulletHoles
 {
@@ -6,6 +8,10 @@ namespace BulletHoles
 
         [SerializeField] string mainMenuName = "MainMenu";
         [SerializeField] GameObject gameOverUI;
+        [SerializeField] bool bossLevel = false;
+        [SerializeField] int maxMayhem = 100;
+        [SerializeField] Image mayhemBar;
+        int mayhem;
         public static GameManager instance { get; private set; }
         public Player Player => player;
 
@@ -14,23 +20,45 @@ namespace BulletHoles
         int score;
         float restartTimer = 3f;
 
-        public bool IsGameOver() => player.GetHealthNormalized() <= 0 || boss.GetHealthNormalized() <= 0;
+        public bool IsGameOver() => player.GetHealthNormalized() <= 0 || GetMayhemNormalized() <= 0;
+
+        public bool IsBossOver() => player.GetHealthNormalized() <= 0 || boss.GetHealthNormalized() <= 0;
 
         void Awake() {
             instance = this;
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-            boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<Boss>();
+            if(bossLevel){
+                boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<Boss>();
+            }
+            else{
+                mayhem = maxMayhem;
+            }
         }
 
         void Update(){
-            if(IsGameOver()){
-                restartTimer -= Time.deltaTime;
-                if(gameOverUI.activeSelf == false){
-                    gameOverUI.SetActive(true);
-                }
+            if(bossLevel){
+                if(IsBossOver()){
+                    restartTimer -= Time.deltaTime;
+                    if(gameOverUI.activeSelf == false){
+                        gameOverUI.SetActive(true);
+                    }
 
-                if(restartTimer <= 0){
-                    Loader.Load(mainMenuName);
+                    if(restartTimer <= 0){
+                        Loader.Load(mainMenuName);
+                    }
+                }
+            }
+
+            else{
+                if(IsGameOver()){
+                    restartTimer -= Time.deltaTime;
+                    if(gameOverUI.activeSelf == false){
+                        gameOverUI.SetActive(true);
+                    }
+
+                    if(restartTimer <= 0){
+                        Loader.Load(mainMenuName);
+                    }
                 }
             }
         }
@@ -38,6 +66,13 @@ namespace BulletHoles
         public void AddScore(int amount){
             score += amount;
         }
+
+        public void IncreaseMayhem(int amount){
+            mayhem -= amount;
+            mayhemBar.fillAmount = GetMayhemNormalized();
+        }
+
+        public float GetMayhemNormalized() => mayhem /(float) maxMayhem;
 
         public int GetScore(){
             return score;
