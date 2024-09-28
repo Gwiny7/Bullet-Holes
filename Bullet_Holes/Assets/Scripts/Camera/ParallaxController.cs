@@ -22,10 +22,10 @@ namespace BulletHoles
         void Update(){
             // Iterate through each background layer
             for(int i = 0; i < backgrounds.Length; i++){
-                float parallax = (previousCamPos.y - cam.position.y) * (i * multiplier);
-                float targetY = backgrounds[i].position.y + parallax;
+                float parallax = (previousCamPos.x - cam.position.x) * (i * multiplier);
+                float targetX = backgrounds[i].position.x + parallax;
 
-                Vector3 targetPosition = new Vector3(backgrounds[i].position.x, targetY, backgrounds[i].position.z);
+                Vector3 targetPosition = new Vector3(targetX, backgrounds[i].position.y, backgrounds[i].position.z);
                 backgrounds[i].position = Vector3.Lerp(backgrounds[i].position, targetPosition, smoothing * Time.deltaTime);
             }
 

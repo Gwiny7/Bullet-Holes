@@ -84,8 +84,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 0}
   m_PlayOnAwake: 1
-  m_LoopMode: 3
-  m_Method: 1
+  m_LoopMode: 0
+  m_Method: 0
   m_Duration: 1
   m_MaxSpeed: 2
   m_EasingMode: 0
@@ -170,6 +170,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   explosionPrefab: {fileID: 0}
+  speed: 0.25
+  timeChangeMove: 0.75
   OnSystemDestroyed:
     m_PersistentCalls:
       m_Calls: []

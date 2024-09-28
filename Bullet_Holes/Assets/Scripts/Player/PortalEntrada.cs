@@ -8,10 +8,10 @@ namespace BulletHoles
     public class PortalEntrada : MonoBehaviour
     {
         [SerializeField] Transform firePoint;
-        Vector3 pos;
         [SerializeField] PortalSaida portalSaida;
 
         void OnCollisionEnter(Collision collision){
+            //Vector3 deslocamento = collision.transform.position - firePoint.position;
             portalSaida.Fire();
         }
 

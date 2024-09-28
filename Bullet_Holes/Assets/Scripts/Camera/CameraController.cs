@@ -13,7 +13,7 @@ namespace BulletHoles
 
         void LateUpdate(){
             //Move camera along the battlefield at constant speed
-            transform.position += Vector3.up * speed * Time.deltaTime;
+            transform.position += Vector3.right * speed * Time.deltaTime;
         }
     }
 }
