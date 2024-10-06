@@ -35,7 +35,7 @@ namespace BulletHoles
         void SpawnEnemy(){
             EnemyType enemyType = enemyTypes[UnityEngine.Random.Range(0, enemyTypes.Count)];
             SplineContainer spline = splines[UnityEngine.Random.Range(0, splines.Count)];
-            enemyFactory.CreateEnemy(enemyType, spline);
+            //enemyFactory.CreateEnemy(enemyType, spline);
             enemiesSpawned++;
         }
 

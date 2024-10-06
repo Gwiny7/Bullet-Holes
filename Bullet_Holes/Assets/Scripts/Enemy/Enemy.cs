@@ -7,7 +7,9 @@ using UnityEngine.Splines;
 public enum Movement
 {
     Down,
-    Up
+    Up,
+    Left,
+    Right
 }
 
 namespace BulletHoles
@@ -18,11 +20,10 @@ namespace BulletHoles
         [SerializeField] float timeChangeMove = 0;
         float changeMove;
         SplineAnimate spline;
-        EnemySpawner spawner;
+        FixedSpawner spawner;
         Movement move = Movement.Down;
 
         void Start(){
-            spawner = GameObject.FindGameObjectWithTag("EnemySpawner").GetComponent<EnemySpawner>();
             spline = gameObject.GetComponent<SplineAnimate>();
             changeMove = timeChangeMove;
         }
@@ -46,6 +47,10 @@ namespace BulletHoles
                     }
                 }
             }
+        }
+
+        public void SetSpawner(FixedSpawner spawn){
+            spawner = spawn;
         }
 
         protected override void Die(int health)

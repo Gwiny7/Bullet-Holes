@@ -9,6 +9,7 @@ namespace BulletHoles
         GameObject enemyPrefab;
         SplineContainer spline;
         GameObject weaponPrefab;
+        FixedSpawner spawner;
         float speed;
 
         public EnemyBuilder SetBasePrefab(GameObject prefab){
@@ -30,6 +31,11 @@ namespace BulletHoles
             this.speed = speed;
             return this;
         }
+        
+        public EnemyBuilder SetSpawner(FixedSpawner spawner){
+            this.spawner = spawner;
+            return this;
+        }
 
         public GameObject Build() {
             GameObject instance = GameObject.Instantiate(enemyPrefab, spline.transform);
@@ -42,6 +48,8 @@ namespace BulletHoles
             splineAnimate.MaxSpeed = speed;
 
             instance.transform.position = (Vector3)spline.EvaluatePosition(0f);
+            Enemy enemy = instance.GetComponent<Enemy>();
+            enemy.SetSpawner(spawner);
 
             return instance;
         }
