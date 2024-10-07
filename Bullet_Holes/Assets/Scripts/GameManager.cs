@@ -6,7 +6,7 @@ namespace BulletHoles
 {
     public class GameManager : MonoBehaviour{
 
-        [SerializeField] string mainMenuName = "MainMenu";
+        [SerializeField] string NextLevel = "MainMenu";
         [SerializeField] GameObject gameOverUI;
         [SerializeField] bool bossLevel = false;
         [SerializeField] int maxMayhem = 100;
@@ -20,9 +20,11 @@ namespace BulletHoles
         int score;
         float restartTimer = 3f;
 
-        public bool IsGameOver() => player.GetHealthNormalized() <= 0 || GetMayhemNormalized() <= 0;
+        public bool IsPlayerDead() => player.GetHealthNormalized() <= 0;
 
-        public bool IsBossOver() => player.GetHealthNormalized() <= 0 || boss.GetHealthNormalized() <= 0;
+        public bool IsGameOver() => GetMayhemNormalized() <= 0;
+
+        public bool IsBossOver() => boss.GetHealthNormalized() <= 0;
 
         void Awake() {
             instance = this;
@@ -36,6 +38,19 @@ namespace BulletHoles
         }
 
         void Update(){
+            if(IsPlayerDead()){
+                if(IsBossOver()){
+                    restartTimer -= Time.deltaTime;
+                    if(gameOverUI.activeSelf == false){
+                        gameOverUI.SetActive(true);
+                    }
+
+                    if(restartTimer <= 0){
+                        Loader.Load("MainMenu");
+                    }
+                }
+            }
+
             if(bossLevel){
                 if(IsBossOver()){
                     restartTimer -= Time.deltaTime;
@@ -44,7 +59,7 @@ namespace BulletHoles
                     }
 
                     if(restartTimer <= 0){
-                        Loader.Load(mainMenuName);
+                        Loader.Load(NextLevel);
                     }
                 }
             }
@@ -57,7 +72,7 @@ namespace BulletHoles
                     }
 
                     if(restartTimer <= 0){
-                        Loader.Load(mainMenuName);
+                        Loader.Load(NextLevel);
                     }
                 }
             }

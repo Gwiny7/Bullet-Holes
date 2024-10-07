@@ -15,5 +15,13 @@ namespace BulletHoles
                 Time.timeScale = 1;
             }
         }
+
+        public static void LoadScene(string name){
+            Loader.Load(name);
+        }
+
+        public static void QuitGame(){
+            Application.Quit();
+        }
     }
 }

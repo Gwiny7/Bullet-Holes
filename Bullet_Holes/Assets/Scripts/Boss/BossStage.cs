@@ -4,7 +4,7 @@ using UnityEngine;
 namespace BulletHoles
 {
     public class BossStage : MonoBehaviour{
-        public List<Enemy> enemySystems;
+        public List<Turret> enemySystems;
         public bool IsBossInvulnerable = true;
 
         void Awake(){

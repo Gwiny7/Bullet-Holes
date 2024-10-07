@@ -29,24 +29,24 @@ namespace BulletHoles
         }
 
         void Update(){
-            if(!spline.IsPlaying){
-                changeMove -= Time.deltaTime;
+                if(!spline.IsPlaying){
+                    changeMove -= Time.deltaTime;
 
-                if(move == Movement.Down){
-                    transform.position += Vector3.down * (speed * Time.deltaTime);
-                    if(changeMove <= 0){
-                        move = Movement.Up;
-                        changeMove = timeChangeMove * 2;
+                    if(move == Movement.Down){
+                        transform.position += Vector3.down * (speed * Time.deltaTime);
+                        if(changeMove <= 0){
+                            move = Movement.Up;
+                            changeMove = timeChangeMove * 2;
+                        }
+                    }
+                    else{
+                        transform.position += Vector3.up * (speed * Time.deltaTime);
+                        if(changeMove <= 0){
+                            move = Movement.Down;
+                            changeMove = timeChangeMove * 2;
+                        }
                     }
                 }
-                else{
-                    transform.position += Vector3.up * (speed * Time.deltaTime);
-                    if(changeMove <= 0){
-                        move = Movement.Down;
-                        changeMove = timeChangeMove * 2;
-                    }
-                }
-            }
         }
 
         public void SetSpawner(FixedSpawner spawn){
