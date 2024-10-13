@@ -268,7 +268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6592196621407738843, guid: c1741e6c8aeaa4141b8a93e3f3894308, type: 3}
       propertyPath: startingLevel
-      value: LevelTutorial
+      value: RemakeLevelTutorial
       objectReference: {fileID: 0}
     - target: {fileID: 8674650683986983422, guid: c1741e6c8aeaa4141b8a93e3f3894308, type: 3}
       propertyPath: m_AnchorMax.y

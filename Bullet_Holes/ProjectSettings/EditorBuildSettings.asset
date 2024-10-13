@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level1.unity
     guid: 9c331283b333a1a47bda016c658556c1
   - enabled: 1
+    path: Assets/Scenes/RemakeLevelTutorial.unity
+    guid: 7dd31e2dac13a3f40ab056b693d1ed38
+  - enabled: 1
     path: Assets/Scenes/LevelTutorial.unity
     guid: ea64156890b476040aecc585e5ebaa5c
   - enabled: 1
