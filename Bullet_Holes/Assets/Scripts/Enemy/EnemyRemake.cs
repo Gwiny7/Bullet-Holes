@@ -8,12 +8,12 @@ namespace BulletHoles
 {
     public class EnemyRemake : Plane {
         [SerializeField] GameObject explosionPrefab;
-        [SerializeField] float speed = 0.5f;
-        [SerializeField] float timeChangeMove = 0;
+        /*[SerializeField] float speed = 0.5f;
+        [SerializeField] float timeChangeMove = 0;*/
         [SerializeField] WaveController wave;
 
         SplineAnimate spline;
-        float changeMove;
+        //float changeMove;
         Movement move = Movement.Down;
 
         void Awake(){
@@ -24,7 +24,7 @@ namespace BulletHoles
         }
 
         void Update(){
-                if(!spline.IsPlaying){
+                /*if(!spline.IsPlaying){
                     changeMove -= Time.deltaTime;
 
                     if(move == Movement.Down){
@@ -41,7 +41,7 @@ namespace BulletHoles
                             changeMove = timeChangeMove * 2;
                         }
                     }
-                }
+                }*/
         }
 
         protected override void Die(int health)

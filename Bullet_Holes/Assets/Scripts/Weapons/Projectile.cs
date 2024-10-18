@@ -1,12 +1,13 @@
 using System;
 using UnityEngine;
-
 namespace BulletHoles
 {
     public class Projectile : MonoBehaviour{
         [SerializeField] float speed;
+        [SerializeField] float duration;
         [SerializeField] GameObject muzzlePrefab;
         [SerializeField] GameObject hitPrefab;
+        [SerializeField] GameObject projectilePrefab;
 
         Transform parent;
 
@@ -16,6 +17,10 @@ namespace BulletHoles
 
         public void SetParent(Transform parent){
             this.parent = parent;
+        }
+
+        public void SetDuration(float duration){
+            this.duration = duration;
         }
 
         public Action Callback;
@@ -53,6 +58,18 @@ namespace BulletHoles
 
             Destroy(gameObject);
         }
+
+        public GameObject GetPrefab(){
+            return projectilePrefab;
+        }
+
+        public float GetSpeed(){
+            return speed;
+        }
+
+        public float GetDuration(){
+            return duration;
+        } 
 
         void DestroyParticleSystem(GameObject vfx){
             var ps = vfx.GetComponent<ParticleSystem>();

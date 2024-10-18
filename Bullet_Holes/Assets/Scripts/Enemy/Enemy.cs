@@ -16,37 +16,20 @@ namespace BulletHoles
 {
     public class Enemy : Plane{
         [SerializeField] GameObject explosionPrefab;
-        [SerializeField] float speed = 0.5f;
+        /*[SerializeField] float speed = 0.5f;
         [SerializeField] float timeChangeMove = 0;
-        float changeMove;
+        float changeMove;*/
         SplineAnimate spline;
         FixedSpawner spawner;
         Movement move = Movement.Down;
 
         void Start(){
             spline = gameObject.GetComponent<SplineAnimate>();
-            changeMove = timeChangeMove;
+            //changeMove = timeChangeMove;
         }
 
         void Update(){
-                if(!spline.IsPlaying){
-                    changeMove -= Time.deltaTime;
-
-                    if(move == Movement.Down){
-                        transform.position += Vector3.down * (speed * Time.deltaTime);
-                        if(changeMove <= 0){
-                            move = Movement.Up;
-                            changeMove = timeChangeMove * 2;
-                        }
-                    }
-                    else{
-                        transform.position += Vector3.up * (speed * Time.deltaTime);
-                        if(changeMove <= 0){
-                            move = Movement.Down;
-                            changeMove = timeChangeMove * 2;
-                        }
-                    }
-                }
+                
         }
 
         public void SetSpawner(FixedSpawner spawn){
