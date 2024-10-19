@@ -33,7 +33,25 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Fire2",
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "fe703fd8-087d-4bf3-8a59-74e4e2b8d4c3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "FireJ",
+                    "type": "Button",
+                    "id": "b462951e-a047-4507-98d8-43eb4d7dd5ad",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "FireK",
                     "type": "Button",
                     "id": "95916e91-db5b-474b-ac88-86b5468936b9",
                     "expectedControlType": "Button",
@@ -42,9 +60,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Pause",
+                    "name": "FireL",
                     "type": "Button",
-                    "id": "fe703fd8-087d-4bf3-8a59-74e4e2b8d4c3",
+                    "id": "15bd85da-ef09-4fa3-b197-e4ea1e8cf766",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -275,11 +293,22 @@
                 {
                     "name": "",
                     "id": "66417ee8-e850-45cb-9856-67444f7de661",
-                    "path": "<Mouse>/rightButton",
+                    "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Fire2",
+                    "action": "FireK",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ac1732ee-91d7-45ee-b9c7-aa783841b417",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FireL",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -291,6 +320,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d69f220e-6ec7-4f0b-9966-5d7460f47bc0",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FireJ",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

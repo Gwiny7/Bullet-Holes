@@ -55,7 +55,25 @@ public partial class @BulletHolesAction: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Fire2"",
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""fe703fd8-087d-4bf3-8a59-74e4e2b8d4c3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""FireJ"",
+                    ""type"": ""Button"",
+                    ""id"": ""b462951e-a047-4507-98d8-43eb4d7dd5ad"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""FireK"",
                     ""type"": ""Button"",
                     ""id"": ""95916e91-db5b-474b-ac88-86b5468936b9"",
                     ""expectedControlType"": ""Button"",
@@ -64,9 +82,9 @@ public partial class @BulletHolesAction: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Pause"",
+                    ""name"": ""FireL"",
                     ""type"": ""Button"",
-                    ""id"": ""fe703fd8-087d-4bf3-8a59-74e4e2b8d4c3"",
+                    ""id"": ""15bd85da-ef09-4fa3-b197-e4ea1e8cf766"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -297,11 +315,22 @@ public partial class @BulletHolesAction: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""66417ee8-e850-45cb-9856-67444f7de661"",
-                    ""path"": ""<Mouse>/rightButton"",
+                    ""path"": ""<Keyboard>/k"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Fire2"",
+                    ""action"": ""FireK"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ac1732ee-91d7-45ee-b9c7-aa783841b417"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FireL"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -313,6 +342,17 @@ public partial class @BulletHolesAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d69f220e-6ec7-4f0b-9966-5d7460f47bc0"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FireJ"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -903,8 +943,10 @@ public partial class @BulletHolesAction: IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
-        m_Player_Fire2 = m_Player.FindAction("Fire2", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
+        m_Player_FireJ = m_Player.FindAction("FireJ", throwIfNotFound: true);
+        m_Player_FireK = m_Player.FindAction("FireK", throwIfNotFound: true);
+        m_Player_FireL = m_Player.FindAction("FireL", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -981,8 +1023,10 @@ public partial class @BulletHolesAction: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Fire;
-    private readonly InputAction m_Player_Fire2;
     private readonly InputAction m_Player_Pause;
+    private readonly InputAction m_Player_FireJ;
+    private readonly InputAction m_Player_FireK;
+    private readonly InputAction m_Player_FireL;
     public struct PlayerActions
     {
         private @BulletHolesAction m_Wrapper;
@@ -990,8 +1034,10 @@ public partial class @BulletHolesAction: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
-        public InputAction @Fire2 => m_Wrapper.m_Player_Fire2;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
+        public InputAction @FireJ => m_Wrapper.m_Player_FireJ;
+        public InputAction @FireK => m_Wrapper.m_Player_FireK;
+        public InputAction @FireL => m_Wrapper.m_Player_FireL;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1010,12 +1056,18 @@ public partial class @BulletHolesAction: IInputActionCollection2, IDisposable
             @Fire.started += instance.OnFire;
             @Fire.performed += instance.OnFire;
             @Fire.canceled += instance.OnFire;
-            @Fire2.started += instance.OnFire2;
-            @Fire2.performed += instance.OnFire2;
-            @Fire2.canceled += instance.OnFire2;
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @FireJ.started += instance.OnFireJ;
+            @FireJ.performed += instance.OnFireJ;
+            @FireJ.canceled += instance.OnFireJ;
+            @FireK.started += instance.OnFireK;
+            @FireK.performed += instance.OnFireK;
+            @FireK.canceled += instance.OnFireK;
+            @FireL.started += instance.OnFireL;
+            @FireL.performed += instance.OnFireL;
+            @FireL.canceled += instance.OnFireL;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1029,12 +1081,18 @@ public partial class @BulletHolesAction: IInputActionCollection2, IDisposable
             @Fire.started -= instance.OnFire;
             @Fire.performed -= instance.OnFire;
             @Fire.canceled -= instance.OnFire;
-            @Fire2.started -= instance.OnFire2;
-            @Fire2.performed -= instance.OnFire2;
-            @Fire2.canceled -= instance.OnFire2;
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @FireJ.started -= instance.OnFireJ;
+            @FireJ.performed -= instance.OnFireJ;
+            @FireJ.canceled -= instance.OnFireJ;
+            @FireK.started -= instance.OnFireK;
+            @FireK.performed -= instance.OnFireK;
+            @FireK.canceled -= instance.OnFireK;
+            @FireL.started -= instance.OnFireL;
+            @FireL.performed -= instance.OnFireL;
+            @FireL.canceled -= instance.OnFireL;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1220,8 +1278,10 @@ public partial class @BulletHolesAction: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
-        void OnFire2(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnFireJ(InputAction.CallbackContext context);
+        void OnFireK(InputAction.CallbackContext context);
+        void OnFireL(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

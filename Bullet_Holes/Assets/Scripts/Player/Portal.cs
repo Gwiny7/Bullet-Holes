@@ -29,7 +29,7 @@ namespace BulletHoles
         }
 
         public void DeletePortal(){
-            otherPortal.SetOther(null);
+            //otherPortal.SetOther(null);
             Destroy(gameObject);
         }
     }

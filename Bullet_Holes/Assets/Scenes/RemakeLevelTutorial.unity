@@ -409,6 +409,37 @@ MonoBehaviour:
       m_Data: []
   m_Knots:
     m_KnotsLink: []
+--- !u!1 &190115181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 190115182}
+  m_Layer: 6
+  m_Name: FirePointRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &190115182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190115181}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: -0.38268343, w: 0.92387956}
+  m_LocalPosition: {x: 0.2, y: 0.2, z: -0.05}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1980755644}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
 --- !u!1 &196740668
 GameObject:
   m_ObjectHideFlags: 0
@@ -2837,7 +2868,7 @@ GameObject:
   m_Component:
   - component: {fileID: 669486663}
   m_Layer: 6
-  m_Name: FirePoint
+  m_Name: FirePointMiddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2858,6 +2889,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1980755644}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &696052202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 696052203}
+  m_Layer: 6
+  m_Name: FirePointLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &696052203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696052202}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 0.38268286, w: 0.92387974}
+  m_LocalPosition: {x: -0.2, y: 0.2, z: -0.05}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1980755644}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
 --- !u!1 &716592891
 GameObject:
   m_ObjectHideFlags: 0
@@ -5778,7 +5840,9 @@ Transform:
   m_Children:
   - {fileID: 1731633986}
   - {fileID: 667042990}
+  - {fileID: 696052203}
   - {fileID: 669486663}
+  - {fileID: 190115182}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!114 &1980755645
@@ -5918,9 +5982,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalPrefab: {fileID: 4078351203785924730, guid: 702f68e33a16a6a42b3dcf76f41805e9, type: 3}
-  spawnPoint: {fileID: 669486663}
+  spawnPointJ: {fileID: 696052203}
+  spawnPointK: {fileID: 669486663}
+  spawnPointL: {fileID: 190115182}
   maxTimerPortal: 1
-  camera: {fileID: 1862787235}
+  cam: {fileID: 1862787235}
 --- !u!1 &2038566269
 GameObject:
   m_ObjectHideFlags: 0
