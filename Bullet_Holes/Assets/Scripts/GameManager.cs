@@ -22,9 +22,9 @@ namespace BulletHoles
 
         public bool IsPlayerDead() => player.GetHealthNormalized() <= 0;
 
-        public bool IsGameOver() => GetMayhemNormalized() <= 0;
+        public bool IsGameOver() => !bossLevel && GetMayhemNormalized() <= 0;
 
-        public bool IsBossOver() => boss.GetHealthNormalized() <= 0;
+        public bool IsBossOver() => bossLevel && boss.GetHealthNormalized() <= 0;
 
         void Awake() {
             instance = this;
@@ -39,41 +39,35 @@ namespace BulletHoles
 
         void Update(){
             if(IsPlayerDead()){
-                if(IsBossOver()){
-                    restartTimer -= Time.deltaTime;
-                    if(gameOverUI.activeSelf == false){
-                        gameOverUI.SetActive(true);
-                    }
+                restartTimer -= Time.deltaTime;
+                if(gameOverUI.activeSelf == false){
+                    gameOverUI.SetActive(true);
+                }
 
-                    if(restartTimer <= 0){
-                        Loader.Load("MainMenu");
-                    }
+                if(restartTimer <= 0){
+                    Loader.Load("MainMenu");
+                }
+            }
+            
+            if(IsBossOver()){
+                restartTimer -= Time.deltaTime;
+                if(gameOverUI.activeSelf == false){
+                    gameOverUI.SetActive(true);
+                }
+
+                if(restartTimer <= 0){
+                    Loader.Load(NextLevel);
                 }
             }
 
-            if(bossLevel){
-                if(IsBossOver()){
-                    restartTimer -= Time.deltaTime;
-                    if(gameOverUI.activeSelf == false){
-                        gameOverUI.SetActive(true);
-                    }
-
-                    if(restartTimer <= 0){
-                        Loader.Load(NextLevel);
-                    }
+            else if(IsGameOver()){
+                restartTimer -= Time.deltaTime;
+                if(gameOverUI.activeSelf == false){
+                    gameOverUI.SetActive(true);
                 }
-            }
 
-            else{
-                if(IsGameOver()){
-                    restartTimer -= Time.deltaTime;
-                    if(gameOverUI.activeSelf == false){
-                        gameOverUI.SetActive(true);
-                    }
-
-                    if(restartTimer <= 0){
-                        Loader.Load(NextLevel);
-                    }
+                if(restartTimer <= 0){
+                    Loader.Load(NextLevel);
                 }
             }
         }

@@ -3705,7 +3705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c198789a06c8f545ac3fa8f28d5b48a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextLevel: BossTutorial
+  NextLevel: MainMenu
   gameOverUI: {fileID: 461895124}
   bossLevel: 0
   maxMayhem: 100
