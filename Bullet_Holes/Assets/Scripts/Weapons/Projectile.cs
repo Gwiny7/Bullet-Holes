@@ -8,6 +8,7 @@ namespace BulletHoles
         [SerializeField] GameObject muzzlePrefab;
         [SerializeField] GameObject hitPrefab;
         [SerializeField] GameObject projectilePrefab;
+        [SerializeField] bool portal;
 
         Transform parent;
 
@@ -28,16 +29,20 @@ namespace BulletHoles
         void Start(){
             if(muzzlePrefab != null){
                 //instantiate muzzle flash
-                GameObject muzzleVFX = Instantiate(muzzlePrefab, transform.position, Quaternion.identity);
-                muzzleVFX.transform.forward = gameObject.transform.forward;
-                muzzleVFX.transform.SetParent(parent);
+                if(!portal){
+                    GameObject muzzleVFX = Instantiate(muzzlePrefab, transform.position, Quaternion.identity);
+                    muzzleVFX.transform.forward = gameObject.transform.forward;
+                    muzzleVFX.transform.SetParent(parent);
 
-                DestroyParticleSystem(muzzleVFX);
+                    DestroyParticleSystem(muzzleVFX);
+                }
             }
         }
 
         void Update(){
-            transform.SetParent(null);
+            if(!portal){
+                transform.SetParent(null);
+            }
             transform.position += transform.up * (speed * Time.deltaTime);
 
             Callback?.Invoke();
@@ -46,9 +51,10 @@ namespace BulletHoles
         void OnCollisionEnter(Collision collision){
             if(hitPrefab != null){
                 ContactPoint contact = collision.contacts[0];
-                GameObject hitVFX = Instantiate(hitPrefab, contact.point, Quaternion.identity);
-
-                DestroyParticleSystem(hitVFX);
+                if(collision.gameObject.GetComponent<Portal>() == null){
+                    GameObject hitVFX = Instantiate(hitPrefab, contact.point, Quaternion.identity);
+                    DestroyParticleSystem(hitVFX);
+                }
             }
 
             Plane plane = collision.gameObject.GetComponent<Plane>();

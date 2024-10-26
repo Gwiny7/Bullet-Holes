@@ -16,6 +16,7 @@ namespace BulletHoles
 
                 Projectile projectileComponent = projectile.GetComponent<Projectile>();
                 projectileComponent.SetSpeed(projectileSpeed);
+                projectileComponent.SetDuration(projectileLifetime);
 
                 Destroy(projectile, projectileLifetime);
             }

@@ -49,6 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 7130989132738239798}
+  life: 3
+  sprite: {fileID: 7866944766353238458}
 --- !u!65 &2727245587331474267
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -202,7 +204,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 95
   m_Sprite: {fileID: 21300000, guid: 37a849f91296d184b9517e9c300ab80d, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.057819128, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.058823586, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

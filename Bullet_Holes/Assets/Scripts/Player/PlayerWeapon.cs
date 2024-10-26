@@ -11,10 +11,11 @@ namespace BulletHoles
         float timerPortal = 0.0F;
         InputReader input;
         Portal[] Portals = new Portal[2];
-        [SerializeField] GameObject cam;
+        GameObject cam;
         GameObject PortalHolder;
 
         void Awake(){
+            cam = GameObject.Find("Main Camera");
             Portals[0] = null;
             Portals[1] = null;
             input = GetComponent<InputReader>();
@@ -48,6 +49,7 @@ namespace BulletHoles
             PortalHolder = Instantiate(portalPrefab, PortalPoint.position, PortalPoint.rotation, cam.transform);
             Portals[0] = PortalHolder.GetComponent<Portal>();
             Portals[0].SetOther(Portals[1]);
+            Portals[0].SetCamera(cam.transform);
             if(Portals[1] != null){
                 Portals[1].SetOther(Portals[0]);
             }

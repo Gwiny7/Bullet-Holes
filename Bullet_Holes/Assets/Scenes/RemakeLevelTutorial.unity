@@ -3705,7 +3705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c198789a06c8f545ac3fa8f28d5b48a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextLevel: MainMenu
+  NextLevel: BossTutorial
   gameOverUI: {fileID: 461895124}
   bossLevel: 0
   maxMayhem: 100
@@ -5986,7 +5986,6 @@ MonoBehaviour:
   spawnPointK: {fileID: 669486663}
   spawnPointL: {fileID: 190115182}
   maxTimerPortal: 1
-  cam: {fileID: 1862787235}
 --- !u!1 &2038566269
 GameObject:
   m_ObjectHideFlags: 0
