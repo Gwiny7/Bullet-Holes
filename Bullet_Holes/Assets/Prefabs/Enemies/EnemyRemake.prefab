@@ -75,9 +75,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   explosionPrefab: {fileID: 0}
-  speed: 0.25
-  timeChangeMove: 0.75
   wave: {fileID: 0}
+  isWaveInfinite: 1
   OnSystemDestroyed:
     m_PersistentCalls:
       m_Calls: []

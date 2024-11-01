@@ -173,6 +173,7 @@ MonoBehaviour:
   timeToNext: 5
   isLast: 0
   isTutorial: 0
+  isInfinite: 0
   screen: {fileID: 0}
 --- !u!1 &158093288
 GameObject:
@@ -849,6 +850,10 @@ PrefabInstance:
       propertyPath: wave
       value: 
       objectReference: {fileID: 127255926}
+    - target: {fileID: 3723942279793945245, guid: e24590f9ac0d6ba40a2c32d06d378f0c, type: 3}
+      propertyPath: isWaveInfinite
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8733190386264130941, guid: e24590f9ac0d6ba40a2c32d06d378f0c, type: 3}
       propertyPath: m_ObjectUpAxis
       value: 3
@@ -988,6 +993,10 @@ PrefabInstance:
       propertyPath: wave
       value: 
       objectReference: {fileID: 127255926}
+    - target: {fileID: 3723942279793945245, guid: e24590f9ac0d6ba40a2c32d06d378f0c, type: 3}
+      propertyPath: isWaveInfinite
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8733190386264130941, guid: e24590f9ac0d6ba40a2c32d06d378f0c, type: 3}
       propertyPath: m_ObjectUpAxis
       value: 3
@@ -1062,6 +1071,10 @@ PrefabInstance:
       propertyPath: wave
       value: 
       objectReference: {fileID: 2081999466}
+    - target: {fileID: 3723942279793945245, guid: e24590f9ac0d6ba40a2c32d06d378f0c, type: 3}
+      propertyPath: isWaveInfinite
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8733190386264130941, guid: e24590f9ac0d6ba40a2c32d06d378f0c, type: 3}
       propertyPath: m_ObjectUpAxis
       value: 3
@@ -1136,6 +1149,10 @@ PrefabInstance:
       propertyPath: wave
       value: 
       objectReference: {fileID: 2081999466}
+    - target: {fileID: 3723942279793945245, guid: e24590f9ac0d6ba40a2c32d06d378f0c, type: 3}
+      propertyPath: isWaveInfinite
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8733190386264130941, guid: e24590f9ac0d6ba40a2c32d06d378f0c, type: 3}
       propertyPath: m_ObjectUpAxis
       value: 3
@@ -1210,6 +1227,10 @@ PrefabInstance:
       propertyPath: wave
       value: 
       objectReference: {fileID: 2081999466}
+    - target: {fileID: 3723942279793945245, guid: e24590f9ac0d6ba40a2c32d06d378f0c, type: 3}
+      propertyPath: isWaveInfinite
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8733190386264130941, guid: e24590f9ac0d6ba40a2c32d06d378f0c, type: 3}
       propertyPath: m_ObjectUpAxis
       value: 3
@@ -1549,10 +1570,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4283103b10dcb4db065c941fc9e22a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWave: {fileID: 127255924}
+  nextWave: {fileID: 1117027609}
   timeToNext: 5
   isLast: 0
   isTutorial: 1
+  isInfinite: 0
   screen: {fileID: 787732049}
 --- !u!1001 &357355031
 PrefabInstance:
@@ -1570,6 +1592,10 @@ PrefabInstance:
       propertyPath: wave
       value: 
       objectReference: {fileID: 127255926}
+    - target: {fileID: 3723942279793945245, guid: e24590f9ac0d6ba40a2c32d06d378f0c, type: 3}
+      propertyPath: isWaveInfinite
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8733190386264130941, guid: e24590f9ac0d6ba40a2c32d06d378f0c, type: 3}
       propertyPath: m_Target
       value: 
@@ -3020,6 +3046,10 @@ PrefabInstance:
       propertyPath: wave
       value: 
       objectReference: {fileID: 344744110}
+    - target: {fileID: 3723942279793945245, guid: e24590f9ac0d6ba40a2c32d06d378f0c, type: 3}
+      propertyPath: isWaveInfinite
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8733190386264130941, guid: e24590f9ac0d6ba40a2c32d06d378f0c, type: 3}
       propertyPath: m_Target
       value: 
@@ -3300,6 +3330,10 @@ PrefabInstance:
       propertyPath: wave
       value: 
       objectReference: {fileID: 344744110}
+    - target: {fileID: 3723942279793945245, guid: e24590f9ac0d6ba40a2c32d06d378f0c, type: 3}
+      propertyPath: isWaveInfinite
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8733190386264130941, guid: e24590f9ac0d6ba40a2c32d06d378f0c, type: 3}
       propertyPath: m_Target
       value: 
@@ -3725,6 +3759,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1117027609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1117027610}
+  - component: {fileID: 1117027611}
+  m_Layer: 0
+  m_Name: WaveInfinite
+  m_TagString: EnemySpawner
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1117027610
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117027609}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1862787238}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1117027611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117027609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1684b5151eef50498acdb65b51760bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefabs:
+  - {fileID: 5363296760014199306, guid: 91cc8a60a2ac5cf4c9dc051846952ee0, type: 3}
+  spawnInterval: 3
+  spawnRadius: 2
+  distance: 5
 --- !u!1 &1135850974
 GameObject:
   m_ObjectHideFlags: 0
@@ -3795,6 +3878,10 @@ PrefabInstance:
       propertyPath: wave
       value: 
       objectReference: {fileID: 2081999466}
+    - target: {fileID: 3723942279793945245, guid: e24590f9ac0d6ba40a2c32d06d378f0c, type: 3}
+      propertyPath: isWaveInfinite
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8733190386264130941, guid: e24590f9ac0d6ba40a2c32d06d378f0c, type: 3}
       propertyPath: m_ObjectUpAxis
       value: 3
@@ -4449,6 +4536,10 @@ PrefabInstance:
       propertyPath: wave
       value: 
       objectReference: {fileID: 2081999466}
+    - target: {fileID: 3723942279793945245, guid: e24590f9ac0d6ba40a2c32d06d378f0c, type: 3}
+      propertyPath: isWaveInfinite
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8733190386264130941, guid: e24590f9ac0d6ba40a2c32d06d378f0c, type: 3}
       propertyPath: m_ObjectUpAxis
       value: 3
@@ -5470,6 +5561,7 @@ Transform:
   m_Children:
   - {fileID: 1526828098}
   - {fileID: 344744109}
+  - {fileID: 1117027610}
   - {fileID: 127255925}
   - {fileID: 2081999465}
   m_Father: {fileID: 0}
@@ -6396,6 +6488,7 @@ MonoBehaviour:
   timeToNext: 5
   isLast: 1
   isTutorial: 0
+  isInfinite: 0
   screen: {fileID: 0}
 --- !u!1 &2113773055
 GameObject:

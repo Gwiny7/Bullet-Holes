@@ -11,20 +11,23 @@ namespace BulletHoles
 
         //Repensar como fazer isso de forma mais bonitinha
         [SerializeField] bool isTutorial = true;
+        [SerializeField] bool isInfinite = false;
         [SerializeField] GameObject screen;
         int enemies = 0;
 
         void Update(){
-            if(waveOver){
-                timeToNext -= Time.deltaTime;
-                if(timeToNext <= 0.0f){
-                    if(!isLast){
-                        if(isTutorial){
-                            screen.SetActive(true);
-                            Time.timeScale = 0;
+            if(!isInfinite){
+                if(waveOver){
+                    timeToNext -= Time.deltaTime;
+                    if(timeToNext <= 0.0f){
+                        if(!isLast){
+                            if(isTutorial){
+                                screen.SetActive(true);
+                                Time.timeScale = 0;
+                            }
+                            nextWave.SetActive(true);
+                            Destroy(gameObject);
                         }
-                        nextWave.SetActive(true);
-                        Destroy(gameObject);
                     }
                 }
             }

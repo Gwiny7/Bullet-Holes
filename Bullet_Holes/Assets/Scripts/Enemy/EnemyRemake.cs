@@ -11,6 +11,7 @@ namespace BulletHoles
         /*[SerializeField] float speed = 0.5f;
         [SerializeField] float timeChangeMove = 0;*/
         [SerializeField] WaveController wave;
+        [SerializeField] bool isWaveInfinite = true;
 
         SplineAnimate spline;
         //float changeMove;
@@ -20,7 +21,9 @@ namespace BulletHoles
             spline = gameObject.GetComponent<SplineAnimate>();
             spline.Container = gameObject.GetComponentInParent<SplineContainer>();
 
-            wave.AddEnemy();
+            if(!isWaveInfinite){ 
+               wave.AddEnemy();
+            }
         }
 
         void Update(){
@@ -49,7 +52,9 @@ namespace BulletHoles
             GameManager.instance.AddScore(10);
             GameManager.instance.IncreaseMayhem(health);
             //Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            wave.EnemyDied();
+            if(!isWaveInfinite){
+                wave.EnemyDied();
+            }
             OnSystemDestroyed?.Invoke();
             Destroy(gameObject);
         }
