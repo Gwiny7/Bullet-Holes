@@ -8,6 +8,7 @@ namespace BulletHoles
 
         [SerializeField] string NextLevel = "MainMenu";
         [SerializeField] GameObject gameOverUI;
+        [SerializeField] GameObject levelCompleteUI;
         [SerializeField] bool bossLevel = false;
         [SerializeField] int maxMayhem = 100;
         [SerializeField] Image mayhemBar;
@@ -51,8 +52,8 @@ namespace BulletHoles
             
             if(IsBossOver()){
                 restartTimer -= Time.deltaTime;
-                if(gameOverUI.activeSelf == false){
-                    gameOverUI.SetActive(true);
+                if(levelCompleteUI.activeSelf == false){
+                    levelCompleteUI.SetActive(true);
                 }
 
                 if(restartTimer <= 0){
@@ -62,8 +63,8 @@ namespace BulletHoles
 
             else if(IsGameOver()){
                 restartTimer -= Time.deltaTime;
-                if(gameOverUI.activeSelf == false){
-                    gameOverUI.SetActive(true);
+                if(levelCompleteUI.activeSelf == false){
+                    levelCompleteUI.SetActive(true);
                 }
 
                 if(restartTimer <= 0){
