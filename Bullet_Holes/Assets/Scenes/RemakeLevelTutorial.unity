@@ -5091,7 +5091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextLevel: BossTutorial
   gameOverUI: {fileID: 461895124}
-  levelCompleteUI: {fileID: 0}
+  levelCompleteUI: {fileID: 2059713070}
   bossLevel: 0
   maxMayhem: 100
   mayhemBar: {fileID: 407700522}
