@@ -5,6 +5,7 @@ namespace BulletHoles
 {
     public abstract class Plane : MonoBehaviour{
         [SerializeField] int maxHealth;
+        [SerializeField] DamageFlash _damageFlash;
         int health;
 
         protected virtual void Awake() => health = maxHealth;
@@ -15,6 +16,9 @@ namespace BulletHoles
             health -= amount;
             if(health <= 0){
                 Die(maxHealth);
+            }
+            else{
+                _damageFlash.CallDamageFlash();
             }
         }
 
