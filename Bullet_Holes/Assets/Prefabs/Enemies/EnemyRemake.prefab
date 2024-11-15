@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0329f9bf540e4ce479af4e7ca04585de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 10
   _damageFlash: {fileID: 7426805823046145978}
   explosionPrefab: {fileID: 0}
   wave: {fileID: 0}
