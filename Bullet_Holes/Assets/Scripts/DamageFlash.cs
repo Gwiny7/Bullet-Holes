@@ -8,6 +8,8 @@ namespace BulletHoles
     {
         [SerializeField] private Color _flashColor = Color.white;
         [SerializeField] private float _flashTime = 0.25f;
+        [SerializeField] private AnimationCurve _flashSpeedCurve;
+
         private Coroutine _damageFlashCoroutine;
 
         private SpriteRenderer renderer;
@@ -32,7 +34,7 @@ namespace BulletHoles
             while(elapsedTime < _flashTime){
                 elapsedTime += Time.deltaTime;
 
-                currentFlashAmount = Mathf.Lerp(1f, 0f, (elapsedTime/_flashTime));
+                currentFlashAmount = Mathf.Lerp(1f, _flashSpeedCurve.Evaluate(elapsedTime), (elapsedTime/_flashTime));
                 SetAmount(currentFlashAmount);
 
                 yield return null;

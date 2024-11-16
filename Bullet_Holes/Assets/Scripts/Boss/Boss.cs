@@ -10,6 +10,8 @@ namespace BulletHoles
     {
         [SerializeField] float maxHealth = 100f;
         [SerializeField] GameObject explosionPrefab;
+        [SerializeField] DamageFlash _damageFlash;
+
         float health;
 
         Collider bossCollider;
@@ -66,6 +68,7 @@ namespace BulletHoles
         void OnCollisionEnter(Collision other){
             health -= 10f;
             OnHealthChanged?.Invoke();
+            _damageFlash.CallDamageFlash();
             if(health <= 0f){
                 BossDefeated();
             }

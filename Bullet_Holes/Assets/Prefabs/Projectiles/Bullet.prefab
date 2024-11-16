@@ -9796,7 +9796,7 @@ MonoBehaviour:
   speed: 10
   duration: 0
   muzzlePrefab: {fileID: 8854889557406742872, guid: 8553196b6d5dce0418cfd0462b70e2ba, type: 3}
-  hitPrefab: {fileID: 2504214343621411470, guid: 3ed0d324122d7b24eaec75c55c74aafc, type: 3}
+  hitPrefab: {fileID: 6049499736202357617, guid: 212d461e2546f1547a26eb293dd8beda, type: 3}
   projectilePrefab: {fileID: 8934161682208992263, guid: e63566a82b2f06c498b6a7daaf89aafe, type: 3}
   portal: 0
 --- !u!135 &3143434579343884155

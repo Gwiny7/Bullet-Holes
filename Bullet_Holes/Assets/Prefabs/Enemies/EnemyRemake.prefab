@@ -76,7 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   _damageFlash: {fileID: 7426805823046145978}
-  explosionPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 6049499736202357617, guid: 212d461e2546f1547a26eb293dd8beda, type: 3}
   wave: {fileID: 0}
   isWaveInfinite: 1
   OnSystemDestroyed:
