@@ -1157,6 +1157,10 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 0.20784315
       objectReference: {fileID: 0}
+    - target: {fileID: 4622030163093381169, guid: c1741e6c8aeaa4141b8a93e3f3894308, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4702740031391084051, guid: c1741e6c8aeaa4141b8a93e3f3894308, type: 3}
       propertyPath: m_Name
       value: MainMenuCanvas
@@ -1523,6 +1527,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8891321352867683246, guid: c1741e6c8aeaa4141b8a93e3f3894308, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082072747081793679, guid: c1741e6c8aeaa4141b8a93e3f3894308, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
